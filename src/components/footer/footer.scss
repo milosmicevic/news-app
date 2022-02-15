@@ -1,0 +1,42 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.footer {
+  @include flexRowCentered;
+  justify-content: space-evenly;
+  min-height: 16rem;
+  padding: 2rem 0;
+
+  .footer-text {
+    p {
+      color: $tertiaryTextColor;
+    }
+  }
+
+  .contact-info,
+  .location-info {
+    @include flexColumnCentered;
+    align-items: flex-start;
+    gap: 1rem;
+    p {
+      @include flexRowCentered;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+
+    svg {
+      color: $tertiaryTextColor;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    @include flexColumnCentered;
+    text-align: center;
+    width: 100%;
+    gap: 2rem;
+
+    .contact-info,
+    .location-info {
+      align-items: center;
+    }
+  }
+}

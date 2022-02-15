@@ -1,0 +1,64 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.hero-section {
+  @include flexRowCentered;
+  width: 100%;
+
+  .hero-left {
+    @include flexColumnCentered;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 3rem;
+    width: 35%;
+
+    .hero-buttons {
+      display: flex;
+      gap: 2rem;
+
+      button {
+        border: none;
+        background-color: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $primaryTextColor;
+        cursor: pointer;
+      }
+
+      .explore-btn {
+        border: 0.1rem solid $primaryTextColor;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1.5rem;
+      }
+
+      .watch-btn {
+        @include flexRowCentered;
+        gap: 0.5rem;
+        color: $tertiaryTextColor;
+
+        svg {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  .hero-right {
+    padding-top: 2rem;
+    width: 30%;
+  }
+
+  @media screen and (max-width: 960px) {
+    @include flexColumnCentered;
+    flex-direction: column-reverse;
+    .hero-left {
+      align-items: center;
+      width: 70%;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .hero-right {
+      width: 55%;
+    }
+  }
+}

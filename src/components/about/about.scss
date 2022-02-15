@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.about-section {
+  @include flexRowCentered;
+  gap: 5rem;
+  min-height: calc(100vh - 20rem);
+  padding-top: 2rem;
+
+  .about-left {
+    width: 30%;
+    height: 100%;
+  }
+
+  .about-right {
+    @include flexColumnCentered;
+    align-items: flex-start;
+    gap: 4rem;
+
+    height: 100%;
+    p {
+      font-size: 1.3rem;
+      .highlighted {
+        color: $tertiaryTextColor;
+        font-weight: 600;
+      }
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    @include flexColumnCentered;
+    flex-direction: column-reverse;
+
+    .about-left {
+      width: 60%;
+    }
+    .about-right {
+      align-items: center;
+      width: 70%;
+      text-align: center;
+      gap: 1.5rem;
+    }
+  }
+}

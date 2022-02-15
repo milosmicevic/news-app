@@ -1,0 +1,69 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.header {
+  @include flexRowCentered;
+  justify-content: space-around;
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  font-weight: 600;
+  z-index: 2;
+  background-color: $secondaryTextColor;
+  a {
+    @include primaryLink;
+  }
+  .logo {
+    @include flexRowCentered;
+    font-size: 1.3rem;
+    .highlighted {
+      color: $tertiaryTextColor;
+    }
+  }
+  .navigation-list {
+    @include flexRowCentered;
+    gap: 1rem;
+    list-style: none;
+
+    .navigation-link {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .active-link {
+      color: $tertiaryTextColor;
+    }
+  }
+
+  .header-toggle {
+    display: none;
+    font-size: 1.7rem;
+  }
+
+  @media screen and (max-width: 960px) {
+    .navigation {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      transition: all 0.3s ease;
+    }
+
+    .navigation-list {
+      @include flexColumnCentered;
+      height: 100%;
+    }
+
+    .navigation.active {
+      height: 100vh;
+      background-color: #f9f9f9;
+      left: 0;
+    }
+
+    .header-toggle {
+      display: flex;
+      cursor: pointer;
+      z-index: 2;
+    }
+  }
+}

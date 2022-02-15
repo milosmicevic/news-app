@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.all-news-section {
+  @include flexColumnCentered;
+  .heading {
+    margin-bottom: 2rem;
+  }
+
+  .filter-container {
+    @include flexRowCentered;
+    justify-content: space-between;
+    width: 70%;
+    .back-btn {
+      @include flexRowCentered;
+      gap: 0.5rem;
+      @include primaryLink;
+      padding: 1.1rem 1.5rem;
+      border-radius: 0.3rem;
+      border: 0.07rem solid #c4c4c4;
+      font-weight: 400;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .filter-container {
+      width: 80%;
+    }
+  }
+}

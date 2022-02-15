@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.top-news-section {
+  @include flexColumnCentered;
+  gap: 3rem;
+  .read-more-btn {
+    @include flexRowCentered;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    @include primaryLink;
+    border: 0.1rem solid $primaryTextColor;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+}

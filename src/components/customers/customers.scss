@@ -1,0 +1,60 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.customers-section {
+  @include flexRowCentered;
+  align-items: flex-start;
+  gap: 5rem;
+  background-image: url("../../images/blob.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: 5rem;
+  background-position-y: 5rem;
+
+  .customers-left {
+    width: 35rem;
+    box-shadow: 0 6px 20px #387dff2b;
+    border-radius: 1rem;
+    padding: 0 5rem;
+  }
+  .customers-right {
+    @include flexColumnCentered;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 30%;
+
+    .customers-cards-container {
+      @include flexColumnCentered;
+      gap: 2rem;
+      .customers-card {
+        @include flexColumnCentered;
+        align-items: flex-start;
+        gap: 1rem;
+        box-shadow: 0 6px 20px #387dff2b;
+        color: $quaternaryTextColor;
+        padding: 2rem;
+        border-radius: 1rem;
+
+        .customers-card-heading {
+          @include flexRowCentered;
+          gap: 0.5rem;
+
+          svg {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 960px) {
+    @include flexColumnCentered;
+
+    .customers-left {
+      width: 80%;
+    }
+
+    .customers-right {
+      width: 80%;
+    }
+  }
+}

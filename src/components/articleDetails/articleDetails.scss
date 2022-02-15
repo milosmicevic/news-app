@@ -1,0 +1,59 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.article-details-section {
+  @include flexColumnCentered;
+  width: 40%;
+  min-height: calc(100vh - 20rem);
+  padding: 1rem 0;
+  margin: 0 auto;
+
+  .article-image {
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    object-fit: cover;
+  }
+  .article-text-container {
+    @include flexColumnCentered;
+    gap: 2rem;
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 6px 20px #387dff2b;
+    .article-title {
+      font-weight: 900;
+      font-size: 2rem;
+    }
+
+    .article-description {
+      font-size: 1.1rem;
+    }
+
+    .article-additional-info {
+      @include flexRowCentered;
+      justify-content: space-around;
+      width: 100%;
+
+      .article-source {
+        background-color: $tertiaryTextColor;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        color: $secondaryTextColor;
+        font-weight: 500;
+      }
+
+      .article-date {
+        background-color: $primaryTextColor;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        color: $secondaryTextColor;
+        font-weight: 500;
+      }
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    width: 85%;
+  }
+}
